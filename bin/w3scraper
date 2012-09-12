@@ -1,4 +1,4 @@
 #!/usr/bin/env ruby
 
-require File.dirname(__FILE__) + "/../lib/w3_scraper_app"
+require File.dirname(__FILE__) + "/../lib/w3_scraper"
 puts W3ScraperApp.new($@).run

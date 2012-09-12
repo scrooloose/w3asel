@@ -2,11 +2,15 @@ def require_lib_file(file)
   require File.dirname(__FILE__) + "/../lib/#{file}"
 end
 
-require_lib_file("w3_scraper_app")
+require_lib_file("w3_scraper")
 
 def run_with_test_file(test_file)
   scraper = W3ScraperApp.new(test_file_path(test_file))
   scraper.run
+end
+
+def output_test_file_path(test_file)
+  "#{root_dir}/spec/test_files/outputs/#{test_file}"
 end
 
 def test_file_path(test_file)
