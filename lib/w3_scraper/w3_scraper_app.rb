@@ -22,7 +22,7 @@ class W3ScraperApp
     end
 
     def print_errors(errors)
-      errors.map do |error|
+      errors.each do |error|
         puts "Error: line #{error.line}, column #{error.col}: #{error.msg}\n"
       end
     end
