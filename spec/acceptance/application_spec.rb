@@ -37,3 +37,19 @@ def should_output(msg)
   $stdout.should_receive(:puts).with(Regexp.new(msg))
 end
 
+def run_with_test_file(test_file)
+  weasel = W3aselApp.new([test_file_path(test_file)])
+  weasel.run
+end
+
+def output_test_file_path(test_file)
+  "#{root_dir}/spec/test_files/outputs/#{test_file}"
+end
+
+def test_file_path(test_file)
+  "#{root_dir}/spec/test_files/#{test_file}"
+end
+
+def root_dir
+  @root_dir ||= File.dirname(__FILE__) + "/.."
+end
