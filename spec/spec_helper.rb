@@ -2,11 +2,11 @@ def require_lib_file(file)
   require File.dirname(__FILE__) + "/../lib/#{file}"
 end
 
-require_lib_file("w3_scraper")
+require_lib_file("w3asel")
 
 def run_with_test_file(test_file)
-  scraper = W3ScraperApp.new(test_file_path(test_file))
-  scraper.run
+  weasel = W3aselApp.new([test_file_path(test_file)])
+  weasel.run
 end
 
 def output_test_file_path(test_file)
@@ -18,7 +18,7 @@ def test_file_path(test_file)
 end
 
 def executable
-  @executable ||= "#{root_dir}/bin/w3scraper"
+  @executable ||= "#{root_dir}/bin/w3asel"
 end
 
 def root_dir

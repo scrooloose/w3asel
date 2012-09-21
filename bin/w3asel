@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+
+require File.dirname(__FILE__) + "/../lib/w3asel"
+W3aselApp.new(ARGV).run

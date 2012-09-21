@@ -18,6 +18,15 @@ describe "Checking a local file for errors" do
   end
 end
 
+describe "CLI" do
+  it "The app is given invalid args and prints the usage and aborts" do
+    should_output('Usage:')
+    lambda {
+      W3aselApp.new(['invalid file']).run
+    }.should raise_error(SystemExit)
+  end
+end
+
 def should_output_error(line, column, msg)
   should_output(%Q(Error: line #{line}, column #{column}: #{msg}))
 end
